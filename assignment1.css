@@ -11,6 +11,9 @@
     background: -moz-linear-gradient(#f7d9e7, white); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#f7d9e7, white); /* Standard syntax (must be last) */
 }
+.productAnchor:hover{
+	color: #c63546;
+}
 .storeName{
 	padding: 8% 0% 0% 10%;
 	margin-top: 0px;
