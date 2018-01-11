@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cake Gallery</title>
+<link rel="icon" href="images/logo.jpg" type="image/jpg" sizes="16x16">
+
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css"
+href="https://mahajan-pooja.github.io/CakeStore/assignment1.css" media="screen">
+<link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+
+<style>
+      body {
+        font-family: 'Kalam', cursive;
+        font-size: 120%;
+      }
+</style>
+
+<script language="JavaScript"> 
+  var timerID = null;
+  var timerRunning = false;
+  function startclock() {
+      stopclock();
+      showtime();
+  }
+  function stopclock() {
+      if (timerRunning) {
+          clearTimeout(timerID);
+          timerRunning = false;
+      }
+  }
+  function showtime() {
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+      var timeValue = "" + ((hours>12)?hours-12: hours);
+      timeValue += ((minutes<10)?":0" : ":") + minutes;
+      timeValue += ((seconds<10)?":0" : ":") + seconds;
+      timeValue += ((hours>=12)?" P.M." : " A.M.");
+      document.getElementById("timerDiv").innerHTML = timeValue;
+      timerID = setTimeout("showtime()", 1000);
+      timerRunning = true;
+  }
+
+function showGreetings(){
+        
+    var myDate = new Date(); 
+    var hours = myDate.getHours();
+    if ( hours >= 0  && hours < 6)  
+    { 
+        document.getElementById("greetingsDiv").innerHTML = "<b>What are you doing that early? </b>"; 
+        // document.getElementById("dateTimer").style.backgroundColor = 'pink';
+            
+    }  
+    else if ( hours >= 6  && hours < 12)  
+    { 
+        document.getElementById("greetingsDiv").innerHTML = "<b>Good Morning!! </b>";
+        // document.getElementById("dateTimer").style.backgroundColor = 'pink';
+    } 
+    else if ( hours >= 12 && hours < 18 ) 
+    { 
+        document.getElementById("greetingsDiv").innerHTML = "<b>Good Afternoon!! </b>"
+        // document.getElementById("dateTimer").style.backgroundColor = 'pink';
+    } 
+    else if ( hours >= 18 && hours < 24 ) 
+    { 
+        document.getElementById("greetingsDiv").innerHTML = "<b>Good Evening!!</b>";
+        // document.getElementById("dateTimer").style.backgroundColor = 'pink';
+    } 
+    else 
+    { 
+        document.write("Have a good day!!"); 
+        // document.getElementById("dateTimer").style.backgroundColor = 'pink';
+            
+    } 
+} 
+function showQuotes(){
+    var quotesArray = new Array("Rise up.. Start fresh.. See the bright opportunity in each Day!!", "A beautiful day begins with a beautiful mindset. The moment you start acting like life is a blessing, it will start to feel like one." , "Never blame any day in your life, Good days give you happiness, bad days give you experience, Worst days give you lesson." , "Life isn't about finding yourself. Life is about creating yourself." , "Life’s true gift lies in your freedom to design it beautifully. With each rise of the sun, you get to chase the opportunity to fill your days with meaning—to live your life the way you choose.");
+        
+
+    var randomQuote =  Math.floor(Math.random() * (4 - 0 + 1)) + 0;
+
+    switch(randomQuote) {
+        case 0:
+            document.getElementById("quotesDiv").innerHTML = quotesArray[0];
+            break;
+        case 1:
+            document.getElementById("quotesDiv").innerHTML = quotesArray[1];
+            break;
+        case 2:
+            document.getElementById("quotesDiv").innerHTML = quotesArray[2];
+            break;
+        case 3:
+            document.getElementById("quotesDiv").innerHTML = quotesArray[3];
+            break;
+        default:
+            document.getElementById("quotesDiv").innerHTML = quotesArray[4];
+    }
+}
+
+// window.onload = function(){
+//     var d = new Date();
+//     var month_name = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+//     var month = d.getMonth();   
+//     var year = d.getFullYear(); 
+//     var first_date = month_name[month] + " " + 1 + " " + year;
+//     var tmp = new Date(first_date).toDateString();
+//     var first_day = tmp.substring(0, 3);    
+//     var day_name = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+//     var day_no = day_name.indexOf(first_day);   
+//     var days = new Date(year, month+1, 0).getDate();    
+//     var calendar = get_calendar(day_no, days);
+//     document.getElementById("calendar-month-year").innerHTML = month_name[month]+" "+year;
+//     document.getElementById("calendar-dates").appendChild(calendar);
+// }
+// function get_calendar(day_no, days){
+//     var todaysDate = new Date().getDate();
+//     var table = document.createElement('table');
+//     table.className = "tableClass";
+//     var tr = document.createElement('tr');
+//     for(var c=0; c<=6; c++){
+//         var th = document.createElement('th');
+//         th.innerHTML = "MTWTFSS"[c];
+//         tr.appendChild(th);
+//     }
+//     table.appendChild(tr);
+//     tr = document.createElement('tr');
+//     var c;
+//     for(c=0; c<=6; c++){
+//         if(c == day_no){
+//             break;
+//         }
+//         var td = document.createElement('td');
+//         td.innerHTML = "";
+//         tr.appendChild(td);
+//     }
+//     var count = 1;
+//     for(; c<=6; c++){
+//         var td = document.createElement('td');
+//         if (count == todaysDate) {
+//           td.className = 'today';
+//         }
+//         td.innerHTML = count;
+//         count++;
+//         tr.appendChild(td);
+//     }
+//     table.appendChild(tr);
+//     for(var r=3; r<=7; r++){
+//         tr = document.createElement('tr');
+//         for(var c=0; c<=6; c++){
+//             if(count > days){
+//                 table.appendChild(tr);
+//                 return table;
+//             }
+//             var td = document.createElement('td');
+//             if (count == todaysDate) {
+//               td.className = 'today';
+//             }
+//             td.innerHTML = count;
+//             count++;
+//             tr.appendChild(td);
+//         }
+//         table.appendChild(tr);
+//     }
+//   return table;
+// }
+</script> 
+</head>
+<body class="bodyClass">
+<header>
+	<section class="logoDiv">
+    <img src="images/c7.png" width="100" height="100" class="imgLogo">
+    <h1 class="logoClass">Cake Gallery</h1>
+    <p class="tagLine">The Taste Of Happiness...</p>
+	</section>	
+	<nav class="navClass">
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/index.html" class="anchorTop">Home</a></span>
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/contact-us.html" class="anchorTop">Contact Us</a></span>
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/about-us.html" class="anchorTop">About Us</a></span>
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/faq.html" class="anchorTop">FAQ</a></span>
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/support.html" class="anchorTop">Customer Service</a></span>
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_info.html" class="anchorTop">Product Information</a></span>
+    <span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_catalog.html" class="anchorTop">Product Catalog</a></span>
+    <span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/employment.html" class="anchorTop">Employment</a></span>
+    <span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/whats_new.html" class="anchorTop">Whats New</a></span>
+    <span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/order.html" class="anchorTop">Order</a></span>
+	</nav>
+</header>
+	<section class="divMain">
+      
+		<article>
+		  	<p class="indent">To us, cake is much more than a dessert—it's a symbol of celebration, joy and togetherness. Our cakes are hand-crafted from scratch, the old fashioned way; just like grandma made with whole buttermilk, fresh eggs and real butter. You can taste the love in every bite.
+		</p> 
+        </article>
+              <img src="images/monster2.png" width="700" height="300">
+
+        <div class="cakeSection">
+          <div class="cakeContainer">
+        	<div class="cakeDiv">
+        		<img width="200" height="200" src="images/cake1.jpg">
+        	</div>
+        	<div class="cakeDiv">
+        		<img width="200" height="200" src="images/cake2.png">
+        	</div>
+        	<div class="cakeDiv">
+        		<img width="200" height="200" src="images/cake3.jpg">
+        	</div>
+        	<div class="cakeDiv">
+        		<img width="200" height="200" src="images/cake4.png">
+        	</div>
+        	<div class="cakeDiv">
+        		<img width="200" height="200" src="images/cake5.jpg">
+        	</div>
+        </div>
+        </div>
+
+        <div class="cakeSection">
+        	<div class="cakeDiv">
+        		<img width="200" height="200" src="images/caket1.jpg">
+        	</div>
+        	<div class="cakeDiv">
+        		<img width="200" height="200" src="images/caket2.jpg">
+        	</div>
+        	<div class="cakeDiv">
+        		<img width="200" height="200" src="images/caket3.jpg">
+        	</div>
+        	<div class="cakeDiv">
+        		<img width="200" height="200" src="images/caket4.jpg">
+        	</div>
+        	<div class="cakeDiv">
+        		<img width="200" height="200" src="images/caket5.jpg">
+        	</div>
+	</div>
+              
+  <div class="dateTimer" id="dateTimer">
+          <div class="timerDiv" id="timerDiv">
+            
+                  <script type="text/javascript">
+                  startclock();
+                  </script>
+          </div>
+          
+          <div class="greetingsDiv" id="greetingsDiv">
+                  <script type="text/javascript">
+                  showGreetings();
+                  </script>
+          </div>
+          <div class="quotesDiv" id="quotesDiv">
+                  <script type="text/javascript">
+                  showQuotes();
+                  </script>
+          </div>
+
+          <!-- <div id="calendar-month-year"></div>
+          <div id="calendar-dates"></div> -->
+  </div>
+<img src="images/c6.png" width="100" height="100">&nbsp&nbsp&nbsp&nbsp&nbsp
+<img src="images/c9.png" width="200" height="100">&nbsp&nbsp
+<img src="images/c6.png" width="100" height="100">
+	</section>
+	<footer>
+	<section class="divBottom">
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/index.html" class="anchorBottom">Home</a></span>
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/contact-us.html" class="anchorBottom">Contact Us</a></span>
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/about-us.html" class="anchorBottom">About Us</a></span>
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/faq.html" class="anchorBottom">FAQ</a></span>
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/support.html" class="anchorBottom">Customer Service</a></span>
+    <span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_info.html" class="anchorBottom">Product Information</a></span>
+		<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_catalog.html" class="anchorBottom">Product Catalog</a></span>
+    <span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/employment.html" class="anchorBottom">Employment</a></span>
+    <span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/whats_new.html" class="anchorBottom">Whats New</a></span>
+    <span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/order.html" class="anchorBottom">Order</a></span>
+	</section>	
+</footer>
+</body>
+</html>

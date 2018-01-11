@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style type="text/css">
+	.mainDiv {
+		background-color: yellow;
+		width:100%;
+		height: auto;
+	}
+	.myNewDiv{
+		background-color: pink;
+		width:100%;
+		height: auto;
+	}
+</style>
+<script language="JavaScript"> 
+function showGreetings(){
+	var myDate = new Date(); 
+	  
+	if ( myDate.getHours() >= 00  && myDate.getHours() <= 6)  
+	{ 
+	    document.write("What are you doing that early?"); 
+	}  
+	else /* hour is from 6am to noon */
+	if ( myDate.getHours() > 12  && myDate.getHours() <= 6)  
+	{ 
+	    document.write("Good Morning!"); 
+	} 
+	else  /* Hour is from noon to 6pm (actually to 5:59 pm) */
+	if ( myDate.getHours() >= 12 && myDate.getHours() <= 18 ) 
+	{ 
+	    document.write("Good Afternoon!"); 
+	} 
+	else  /* the hour is between 6pm and midnight */
+	if ( myDate.getHours() >= 17 && myDate.getHours() <= 24 ) 
+	{ 
+	    document.write("Good Evening!"); 
+	} 
+	else  /* the hour is not between 0 and 24, so something is wrong */
+	{ 
+	    document.write("Have a good day!!"); 
+	} 
+
+	//document.write("<br /><br /> The hour is: ") 
+	//document.write( myDate.getHours() ); 
+} 
+</script> 
+</head>
+<body>
+	<div class="mainDiv" id="mainDiv">
+<!-- 		<p>I love watching movies. <br> This is one of my fevorite.</p>
+ -->	</div>
+	<script type="text/javascript">
+		showGreetings();
+	</script>
+</body>
+</html>

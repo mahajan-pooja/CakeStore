@@ -1,0 +1,393 @@
+.bodyClass {
+	background : #f0f0f5;
+    color : #99003d;
+   	font-weight : normal;
+   	width: 100%;
+   	margin-bottom : 0px;
+   	height: auto;
+
+   	background: -webkit-linear-gradient(#f7d9e7, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#f7d9e7, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#f7d9e7, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#f7d9e7, white); /* Standard syntax (must be last) */
+}
+.storeName{
+	padding: 8% 0% 0% 10%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 350%;
+	color: #C63546;
+	text-shadow: 2px 2px yellow;
+}
+.tagLine{
+	margin-top: 0px;
+	margin-left: 15%;
+	font-size: 120%;
+}
+
+.windowBody{
+	background-color: #c63546;
+	color: white;
+	padding: 0px 20px;
+	text-align: center;
+}
+ .jobClass {
+ 	font-size: 120%;
+ 	font-weight: bold;
+ }
+ .jobLink {
+ 	text-decoration: none;
+ }
+ .jobLink:hover{
+ 	color: #c63546;
+ }
+ .jobDiv{
+ 	padding-bottom: 50px;
+ }
+.windowBody a {
+	text-decoration: none;
+	color: yellow;
+	font-size: 20px;
+}
+html{
+
+	width: 100%; 
+	margin-left: -8px;
+}
+.imgLogo{
+	padding: 70px 0px 0px 80px;
+	margin-bottom: -2%;
+	margin-left: 0px;
+	float: left;
+}
+.logoClass {
+	padding: 70px 0px 0px 80px;
+
+/*	padding: 8% 0% 0% 10%;
+*/	margin-top: 0px;
+	margin-bottom: -2%;
+	margin-left: 0px;
+	font-size: 350%;
+	color: #C63546;
+	text-shadow: 2px 2px yellow;
+}
+.navClass {
+	width:100%;
+	background-color: #c63546;
+	height:50px;
+	text-align: center;
+	padding-top: 20px;
+	box-shadow: 0 4px 20px 0px brown;
+	z-index: 1000px;
+	position: relative;
+}
+.anchorTop {
+	color: white;
+	text-decoration: none;
+	padding: 5px;
+	text-shadow: 3px 3px maroon;
+}
+.anchorBottom {
+	color: white;
+	text-decoration: none;
+	font-size: 100%;
+	padding: 5px;
+	text-shadow: 3px 3px maroon;
+}
+a:hover {
+	color: yellow;
+}
+
+.spanClass {
+	margin-right: 6px;
+}
+.divMain {
+	padding: 20px;
+	font-style: italic;
+	font-size: 120%;
+	height: auto;
+	text-align: center;
+	
+
+}
+.divBottom {
+	background-color: #c63546;
+	width:100%;
+	height: 2%;
+	text-align: center;
+	padding-top: 1%;
+	padding-bottom: 2%;
+
+}
+.indent {
+	text-indent: 50px;
+	margin-bottom: 0px;
+}
+.logoDiv{
+	width: 100%;
+	height:250px;
+	background-color: #CCCCCC;
+	margin-top: -20px;
+	background-image: url("https://mahajan-pooja.github.io/CakeStore/images/banner5.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.logoImg{
+	float: left;
+}
+.spanMarg{
+	margin:80px;
+}
+dt{
+	font-weight: bold;
+}
+.liBold{
+	font-weight: bold;
+	color: red;
+}
+.table-class {
+	/*margin-left: 3%;*/
+	border : 1px solid;
+	border-color: red;
+	box-shadow: 10px 10px 10px #debcd5;
+	border-radius: 25px;
+	padding: 10px 40px 30px 40px;
+	margin-bottom: 1%;
+	margin: 0 auto;
+}
+.personal{
+	border: 1px solid #debcd5;
+	margin-left: 3%;
+	width : 70%;
+	padding: 20px;
+	box-shadow: 5px 5px 20px #98003c;
+	margin-bottom: 20px;
+
+}
+#btnSub{
+	background-color: pink;
+	width: 10%;
+	padding: 1%;
+	margin-top: 10px;
+	font-weight: bolder;
+	color: brown;
+	box-shadow: 5px 5px 20px #98003c;
+
+}
+#btnReset{
+	background-color: pink;
+	width: 10%;
+	padding: 1%;
+	margin-top: 10px;
+	font-weight: bolder;
+	color: brown;
+	margin-left: 20px;
+}
+.cakeCatelogDiv {
+	width: 300px;
+	height: 450px;
+	opacity: 50%;
+	border:1px solid brown;
+	text-align: center;
+	padding : 10px;
+	margin: 15px;
+	font-size: 70%;
+	color: #98003c;
+	background-color: #debcd5;
+	/*background-color: rgba(152, 0, 60, 0.1);*/
+	box-shadow: 10px 10px 30px #98003c;
+
+}
+th{
+	padding: 1%;
+}
+.product-image {
+	margin-bottom:-5px;
+}
+.pro-info {
+	padding: 10px;
+}
+.divMainSupport {
+	width:70%;
+	margin-right: 10px;
+	float: left;
+	background-image: url("https://mahajan-pooja.github.io/CakeStore/images/banner4.jpg"); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 20px;
+	font-style: italic;
+	font-size: 120%;
+	height: auto;
+	color: #58070E;
+	
+}
+.aside-section {
+	float: left;
+}
+.aside-class {
+	height:auto;
+	float:right;
+	width : 288.5px;
+	padding: 20px;
+	background: -webkit-linear-gradient(#EEB8D2, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#EEB8D2, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#EEB8D2, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#EEB8D2, white); /* Standard syntax (must be last) */
+}
+
+footer{
+	clear: both;
+}
+
+.multi-art {
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    padding: 20px;
+    text-align: justify;
+    column-gap: 40px;
+    column-rule-style: solid;
+	column-rule-width: 1px;
+}
+.indent-class {
+	text-indent: 50px;
+}
+.video-class {
+	margin-left: 320px;
+}
+.order-table {
+	width: 80%;
+	margin: 20px 0px 20px 100px;
+	border-color: #99003d;
+	border-style: groove;
+	border-collapse: collapse;
+	text-align: center;
+}
+.cust-form {
+	width: 50%;
+	margin-left: 300px;
+	outline-color: red;
+	text-align: right;
+}
+
+.order-table th {
+	color: #D43F3F;
+}
+legend {
+	color: #D43F3F;
+	font-weight: bold;
+	font-size: 150%;
+}
+.tableForm{
+	width: 80%;
+	margin-left : 0%;
+		box-shadow: 5px 5px 20px #98003c;
+
+}
+.tableForm td{
+	padding: 1%;
+}
+.cakeContainer{
+	width: 100%;
+	height: 200px;
+	margin:0 auto;
+}
+.cakeSection {
+	width: 94%;
+	box-shadow: 0 4px 20px 0px #99003D;
+	height: 200px;
+	padding: 20px;
+	margin-bottom: 30px;
+	background-color: #c63546;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	padding-left: 3%;
+margin-top: -1%;
+}
+
+.cakeDiv {
+	width:200px;
+	height: 200px;
+	display:inline-block; 
+	margin:0 auto;
+	padding-right: 1%;
+}
+.infoImg {
+	border:5px solid #98003C;
+	border-radius: 15px;
+}
+#divMain {
+	height: 500px;
+}
+#imageDiv {
+	font-size : 63%; 
+	font-weight : bold;
+	font-color : red;
+	width : 400px;
+	height : 400px;
+	text-align: center;
+	background-color: pink;
+	position:absolute;
+	top : 350px;
+	left : 50px;
+	padding: 20px;
+	box-shadow: 0 4px 20px 5px red;
+}
+
+#imageDiv img {
+	border: 2px solid red;
+}
+
+
+.dateTimer {
+	width : 98%;
+	height : auto;
+	border: 0px solid red;
+	background-color: #DFB2C7;
+	padding: 10px;
+	float: left;
+	margin-bottom: 20px;
+	
+}
+.greetingsDiv{
+	float: left;
+	width: 97%;
+	height: 30px;
+	padding: 20px;
+	border-bottom: 1px solid black;
+}
+.timerDiv {
+	width: 97%;
+	height: 20px;
+	padding: 20px;
+	font-weight: bold;
+	float: left;
+	border-bottom: 1px solid black;
+}
+.quotesDiv {
+	width: 97%;
+	height: auto;
+	padding: 20px;
+	font-weight: bold;
+	float: left;
+}
+ .today {
+    background: blue;
+    color: #fff;
+  }
+  .tableClass {
+  	margin-left: 41%;
+  	margin-top: 0px;
+  }
+  .tdClass{
+    text-align: right;
+    padding-right: 5px;
+  }
+  #formDiv {
+  	margin-left: 200px;
+  }
+  #btnReset {
+  	margin-right: 300px;
+  		box-shadow: 5px 5px 20px #98003c;
+
+  }

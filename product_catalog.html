@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cake Gallery</title>
+<link rel="icon" href="images/logo.jpg" type="image/jpg" sizes="16x16">
+<link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+
+<style>
+      body {
+        font-family: 'Kalam', cursive;
+        font-size: 120%;
+      }
+</style>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="https://mahajan-pooja.github.io/CakeStore/assignment1.css" media="screen">
+
+<script type="text/javascript">
+	function Product(title, description, price, image, category, imageIcon) {
+		this.title = title;
+		this.price = price;
+		this.description = description;
+		this.image = image;
+		this.category = category;
+		this.imageIcon = imageIcon;
+	}
+
+	//Chocolate Array object
+	var chocolateCakeArray = Array();
+	chocolateCakeArray.push(new Product("Blackout Chocolate cake", "The best chocolate cake with decadent chocolate buttercream frosting that will quickly become your fevorite.", " $45.00","choco1.jpeg", "Chocolate ","cp2.png"));
+	chocolateCakeArray.push(new Product("Chocolate Poke Cake", "Chocolaty goodness in cake with rich layer of homemade pudding.", " $55.00","choco2.jpg", "Chocolate ","cp2.png"));
+	chocolateCakeArray.push(new Product("Fudgy Chocolate Cake", "Rich and decadent cake with perfect balance of fluffy and fudgy.", " $45.00","choco3.jpg", "Chocolate ","cp2.png"));
+
+	//Vanilla Array object
+	var vanillaCakeArray = Array();
+	vanillaCakeArray.push(new Product("Classic Vanilla Cake", "Fluffy vanilla cake layers with silky vanilla buttercream.", " $35.00","vanilla1.jpeg","Vanilla","cp1.png"));
+	vanillaCakeArray.push(new Product("Buttermilk Vanilla Cake", "A delicate layer cake topped with homemade vanilla buttermilk frosting.", " $25.00","vanilla2.jpg","Vanilla","cp1.png"));
+	vanillaCakeArray.push(new Product("Basic Vanilla Cake","The softest most moist cake ever topped with frosing.", " $40.00","vanilla3.jpg","Vanilla","cp1.png"));
+
+	//Strawberry Array object 
+	var strawberryCakeArray = Array();
+	strawberryCakeArray.push(new Product("French Strawberry Cake", "Soft and fluffy cake made with fresh strawberries and topped with cream strawberries butter cream.", " $45.00","straw1.jpg", "Strawberry ","cp3.png"));
+	strawberryCakeArray.push(new Product("Strawberry Cheese Cake", "Bursting with fresh strawberry flavour and Whipped Cream Cheese Frosting.", " $55.00","straw2.jpg", "Strawberry ","cp3.png"));
+	strawberryCakeArray.push(new Product("Strawberry triple layer cake", "Amazing triple decker strawberry cake. Super Moist, rich and really sweet.", " $35.00","straw3.jpg", "Strawberry ","cp3.png"));
+
+	var cake = Array();
+	cake.push(chocolateCakeArray);
+	cake.push(vanillaCakeArray);
+	cake.push(strawberryCakeArray);
+
+	function displayCatelog(){ 
+		document.write('<div class="cakeCategory"><table class="table-class">');
+		for(var i = 0;  i < cake.length ; i++){
+			var cakeIndex = cake[i];
+			document.write('<tr></tr><th></th><th style="font-size:160%;padding:30px; color:#c63546;"><b><img src="images/'+ cakeIndex[i].imageIcon +'" width="50" height="50">'+ cakeIndex[i].category +'<img src="images/'+ cakeIndex[i].imageIcon +'" width="50" height="50"></b></th><tr>');
+			for(var j = 0; j < cakeIndex.length; j++) {
+				displayCakes(cake[i][j]);
+			}
+			document.write('</tr>');
+		}
+		document.write('</table></div>');
+	}
+
+	function displayCakes(cakeObject){
+		document.write('<td><div class="cakeCatelogDiv">');
+		document.write('<div><br><img src="https://mahajan-pooja.github.io/CakeStore/images/'+ cakeObject.image +'" width=200px height=200px></div>');
+		document.write('<br><span style="color:#ec0052;font-size:150%;">' + cakeObject.title + '</span>');
+		document.write('<br><br>' + cakeObject.description);
+		document.write('<br><br>' + cakeObject.price);
+		document.write("</div></td>");
+	}
+</script>
+</head>
+<body class="bodyClass">
+	<header>
+		<section class="logoDiv">
+			<img src="images/c7.png" width="100" height="100" class="imgLogo">
+			<h1 class="logoClass">Cake Gallery</h1>
+    <p class="tagLine">The Taste Of Happiness...</p>
+		</section>	
+		<nav class="navClass">
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/index.html" class="anchorTop">Home</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/contact-us.html" class="anchorTop">Contact Us</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/about-us.html" class="anchorTop">About Us</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/faq.html" class="anchorTop">FAQ</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/support.html" class="anchorTop">Customer Service</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_info.html" class="anchorTop">Product Information</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_catalog.html" class="anchorTop">Product Catalog</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/employment.html" class="anchorTop">Employment</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/whats_new.html" class="anchorTop">Whats New</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/order.html" class="anchorTop">Order</a></span>
+		</nav>
+	</header>
+	<section class="divMain">
+		<script type="text/javascript">
+		document.write('<span style="font-size:130%;">Welcome to our Cake Catalog section!!!</span><br><br>');
+			displayCatelog();
+		</script>
+	</section>
+	<footer>
+		<section class="divBottom">
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/index.html" class="anchorBottom">Home</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/contact-us.html" class="anchorBottom">Contact Us</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/about-us.html" class="anchorBottom">About Us</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/faq.html" class="anchorBottom">FAQ</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/support.html" class="anchorBottom">Customer Service</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_info.html" class="anchorBottom">Product Information</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_catalog.html" class="anchorBottom">Product Catalog</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/employment.html" class="anchorBottom">Employment</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/whats_new.html" class="anchorBottom">Whats New</a></span>
+			<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/order.html" class="anchorBottom">Order</a></span>
+		</section>	
+	</footer>
+</body>
+</html>

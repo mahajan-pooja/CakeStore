@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cake Gallery</title>
+<link rel="icon" href="images/logo.jpg" type="image/jpg" sizes="16x16">
+<link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+
+<style>
+      body {
+        font-family: 'Kalam', cursive;
+        font-size: 120%;
+      }
+</style>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css"
+href="https://mahajan-pooja.github.io/CakeStore/assignment1.css" media="screen">
+
+<script language="JavaScript"> 
+function validateForm() {
+    var fname = document.forms["myForm"]["first"].value;
+    if(fname.length == 0 || fname == ""){
+        alert("First Name must be filled out");
+        document.getElementById("first").focus();
+        return false;
+    }
+    if(fname != ''){
+      var regExp = /[a-zA-Z]/;
+      var result1 = regExp.test(fname);
+      if(!result1){
+        alert("First Name must be characters only.");
+        document.getElementById("first").focus();
+        document.getElementById("first").select();
+        return false;
+      }
+    }
+    var lname = document.forms["myForm"]["last"].value;
+    if(lname.length == 0 || lname == ""){
+        alert("Last Name must be filled out");
+        document.getElementById("last").focus();
+        return false;
+    }
+    if(lname != ''){
+      var regExp = /[a-zA-Z]/;
+      var result2 = regExp.test(lname);
+      if(!result2){
+        alert("Last Name must be characters only.");
+        document.getElementById("last").focus();
+        document.getElementById("last").select();
+        return false;
+      }
+    }
+    var address = document.forms["myForm"]["address"].value;
+    if(address.length == 0 || address == ""){
+        alert("Street Address must be filled out");
+        document.getElementById("address").focus();
+        return false;
+    }
+    var city = document.forms["myForm"]["city"].value;
+    if(city.length == 0 || city == ""){
+        alert("City must be filled out");
+        document.getElementById("city").focus();
+        return false;
+    }
+    if(city != ''){
+      var regExp = /[a-zA-Z]/;
+      var result3 = regExp.test(city);
+      if(!result3){
+        alert("City Name must be characters only.");
+        document.getElementById("city").focus();
+        document.getElementById("city").select();
+        return false;
+      }
+    }
+
+    var state = document.forms["myForm"]["state"].value;
+    if(state.length == 0 || state == ""){
+        alert("State must be filled out");
+        document.getElementById("state").focus();
+        return false;
+    }
+    if(state != ''){
+      var regExp = /[a-zA-Z]/;
+      var result4 = regExp.test(state);
+      if(!result4){
+        alert("State Name must be characters only.");
+        document.getElementById("state").focus();
+        document.getElementById("state").select();
+        return false;
+      }
+    }
+
+    var zip = document.forms["myForm"]["zip"].value;
+    if(zip.length == 0 || zip == ""){
+      alert("Zip code must be filled out");
+      document.getElementById("zip").focus();
+      return false;
+    }
+    if(zip.length != 0){
+      var zipCodePattern = /^\d{5}$|^\d{5}\d{4}$/;
+      var numericCheck = /[0-9]/;
+      var result5 = zipCodePattern.test(zip);
+      var result6 = numericCheck.test(zip);
+      if((!result5) || (!result6)){
+        alert("Please enter valid 5 or 9 digit zip code only.");
+        document.getElementById("zip").focus();
+        document.getElementById("zip").select();
+        return false;
+      }
+    }
+
+
+    var telephone = document.forms["myForm"]["phone"].value
+    if(telephone.length == 0 || telephone == ""){
+      alert("Telephone number must be filled out");
+      document.getElementById("telephone").focus();
+      return false;
+    }
+    if(telephone != ""){
+      regExp = /\(\d{3}\)\s\d{3}-\d{4}/;
+      var result7 = regExp.test(telephone);
+      if(!result7){
+        alert("Please enter telephone number in (xxx) xxx-xxxx format only.");
+        document.getElementById("phone").focus();
+        document.getElementById("phone").select();
+        return false;
+      }
+    }
+
+    var email = document.forms["myForm"]["email"].value;
+    if(email.length == 0 || email == ""){
+      alert("Email must be filled out");
+      document.getElementById("email").focus();
+      return false;
+    }
+
+    var credit = document.forms["myForm"]["ccnum"].value;
+    if(credit.length == 0 || credit == ""){
+      alert("Credit card number must be filled out");
+      document.getElementById("ccnum").focus();
+      return false;
+    }
+    if(credit != ""){
+      regExp = /\d{16}/;
+      var result8 = regExp.test(credit);
+      if(!result8){
+        alert("Please 16 digits credit card number only.");
+        document.getElementById("ccnum").focus();
+        document.getElementById("ccnum").select();
+        return false;
+      }
+    }
+
+    var expire = document.forms["myForm"]["ccexpire"].value;
+    if(expire.length == 0 || expire == ""){
+      alert("Credit card expiry date must be filled out");
+      document.getElementById("ccexpire").focus();
+      return false;
+    }
+    if(expire != ""){
+      regExp = /\d\d\/\d{4}/;
+      var result9 = regExp.test(expire);
+      if(!result9){
+        alert("Please enter credit card number in mm/yyyy format only.");
+        document.getElementById("ccexpire").focus();
+        document.getElementById("ccexpire").select();
+        return false;
+      }
+    }
+
+    if(expire != ""){
+        var expire = document.getElementById("ccexpire").value;
+        if(!expire.match(/(0[1-9]|1[0-2])[/][0-9]{4}/)){
+            alert("The expire date format is not correct!\n");
+            document.getElementById("ccexpire").focus();
+            document.getElementById("ccexpire").select();
+            return false;
+        } else {
+            var d = new Date();
+            var currentYear = d.getFullYear();
+            var currentMonth = d.getMonth() + 1;
+            var parts = expire.split('/');
+            var year = parseInt(parts[1], 10);
+            var month = parseInt(parts[0], 10);
+            if (year < currentYear || (year == currentYear && month < currentMonth)) {
+              alert("The expiry date has passed.\n");
+              document.getElementById("ccexpire").focus();
+              document.getElementById("ccexpire").select();
+              return false;
+            }
+        }
+    }
+return true;
+}
+
+function submitForm()
+{
+    if(validateForm()){ 
+        document.forms["myForm"].submit(); 
+        clearForm();
+        return true;
+    }else{
+    	return false;
+    }
+}
+function clearForm(){
+    setTimeout(function(){ 
+    	document.forms["myForm"].reset(); 
+    }, 1000);
+}
+function updateProductTotal(qty,price,total){
+    var quantityChoco = document.getElementById(qty).value;
+    var priceChoco = document.getElementById(price).innerText;
+    var price = priceChoco.split("$");
+    var totalChoco1 = quantityChoco * price[1];
+    document.getElementById(total).value = totalChoco1;
+}
+var productChocoTotalPrice = null;
+var productVanTotalPrice = null;
+var productStrTotalPrice = null;
+var total = null;
+
+function calculateSubTotal(total1, total2, total3, subtotalID) {
+    var totalChoco1 = document.getElementById(total1).value; 
+    var totalChoco2 = document.getElementById(total2).value;
+    var totalChoco3 = document.getElementById(total3).value;
+    if(totalChoco1 == ''){ 
+     totalChoco1 = '0';
+    }
+    if(totalChoco2 == ''){ 
+     totalChoco2 = '0';
+    }
+    if(totalChoco3 == ''){ 
+     totalChoco3 = '0';
+    }
+
+    productChocoTotalPrice = parseInt(totalChoco1) + parseInt(totalChoco2) + parseInt(totalChoco3);
+    document.getElementById(subtotalID).value = productChocoTotalPrice;
+    return productChocoTotalPrice;
+}
+
+function updateChocoSubtotal(total1, total2, total3,subtotalID){ 
+    calculateSubTotal(total1, total2, total3, subtotalID);
+}
+
+function updateVanSubtotal(total1, total2, total3,subtotalID){
+    calculateSubTotal(total1, total2, total3, subtotalID);
+}
+function updateStrSubtotal(total1, total2, total3,subtotalID){
+    calculateSubTotal(total1, total2, total3, subtotalID);
+}
+
+function calculateTotal(total1, total2, total3,subtotalID){
+    var total = calculateSubTotal(total1, total2, total3, subtotalID);
+    calculateSalesTax(total);
+}
+
+function format(anum, decnum) {
+    var myString = "" + Math.round(eval(anum)*Math.pow(10,decnum));
+    while (myString.length <= decnum) {
+        myString = "0" + myString;
+    }
+    var locdec = myString.length - decnum;
+    return myString.substring(0, locdec) + "." + myString.substring(locdec,myString.length);
+}
+
+function calculateSalesTax(total){
+    var salesTax = total * (8.25/100);
+    var salesTaxAmt = format(salesTax,2);
+    document.getElementById('sales').value = salesTaxAmt;
+    calculateSalesTotal(total,salesTaxAmt);
+}
+
+function calculateSalesTotal(total,salesTaxAmt){
+    var salesTotal = parseInt(total) + parseFloat(salesTaxAmt);
+    document.getElementById('salesTotal').value = salesTotal;
+    calculateGrandTotal(salesTotal);
+}
+function calculateGrandTotal(salesTotal){ 
+    if(salesTotal != 0){
+        document.getElementById("ship").value = '20';
+    }else{
+        document.getElementById("ship").value = '0';
+    }
+    var shipping = document.getElementById('ship').value;
+    var grandTotal = parseInt(shipping) + parseFloat(salesTotal); 
+    document.getElementById('grandTotal').value = format(grandTotal,2);
+}
+</script> 
+</head>
+<body class="bodyClass">
+<header>
+<section class="logoDiv">
+  <img src="images/c7.png" width="100" height="100" class="imgLogo">
+  <h1 class="logoClass">Cake Gallery</h1>
+    <p class="tagLine">The Taste Of Happiness...</p>
+</section>	
+<nav class="navClass">
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/index.html" class="anchorTop">Home</a></span>
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/contact-us.html" class="anchorTop">Contact Us</a></span>
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/about-us.html" class="anchorTop">About Us</a></span>
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/faq.html" class="anchorTop">FAQ</a></span>
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/support.html" class="anchorTop">Customer Service</a></span>
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_info.html" class="anchorTop">Product Information</a></span>
+<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_catalog.html" class="anchorTop">Product Catalog</a></span>
+<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/employment.html" class="anchorTop">Employment</a></span>
+<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/whats_new.html" class="anchorTop">Whats New</a></span>
+<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/order.html" class="anchorTop">Order</a></span>
+</nav>
+</header>
+<section class="divMain">
+  <div style="float: left; margin-left: 17%;margin-bottom: 2%;">
+  <img src="images/c1.png" width="100" height="100" style="float: left;">
+  <p style="font-size: 120%;float: left;">Welcome to orders section... Place your order here!!!</p>
+  <img src="images/c1.png" width="100" height="100" style="float: left;">
+  </div>
+    <form name="myForm" id="formDiv" action="http://voyager.deanza.edu/~hso/cgi-bin/form420.cgi" onsubmit="return submitForm()" target="_blank" method="post">
+      <table class="tableForm" border="1">
+        <tr><th>Category</th><th>Description</th><th>Unit Price</th><th>Quantity</th><th>Total Price($)</th></tr>
+        <tr>
+            <td rowspan="3">Chocolate</td>
+            <td>Blackout Chocolate cake</td>
+            <td id="choco1">$45.00</td>
+            <td><input type="number" name="qtyChoco1" id="qtyChoco1" oninput="updateProductTotal('qtyChoco1','choco1','totalChoco1'); updateChocoSubtotal('totalChoco1', 'totalChoco2', 'totalChoco3','subChoco');
+            calculateTotal('subChoco','subVanilla', 'subStr', 'totalPrice')"></td>
+            <td><input type="text" name="totalChoco1" id="totalChoco1" readonly></td>
+        </tr>
+        <tr>
+            <td>Chocolate Poke Cake</td>
+            <td id="choco2">$55.00</td>
+            <td><input type="number" name="qtyChoco2" id="qtyChoco2" oninput="updateProductTotal('qtyChoco2','choco2','totalChoco2');
+            updateChocoSubtotal('totalChoco1', 'totalChoco2', 'totalChoco3','subChoco');
+            calculateTotal('subChoco','subVanilla', 'subStr', 'totalPrice')"></td>
+            <td><input type="text" name="totalChoco2" id="totalChoco2" readonly></td>
+        </tr>
+        <tr>
+          <td>Fudgy Chocolate Cake</td>
+          <td id="choco3">$45.00</td>
+          <td><input type="number" name="qtyChoco3" id="qtyChoco3" oninput="updateProductTotal('qtyChoco3','choco3','totalChoco3');
+            updateChocoSubtotal('totalChoco1', 'totalChoco2', 'totalChoco3','subChoco');
+            calculateTotal('subChoco','subVanilla', 'subStr', 'totalPrice')"></td>
+          <td><input type="number" name="totalChoco3" id="totalChoco3" readonly></td>
+        </tr>
+        <tr>
+          <td colspan="4" class="tdClass">Subtotal $</td>
+          <td><input type="number" name="subChoco" id="subChoco" readonly></td>
+        </tr>
+        <tr>
+          <td rowspan="3">Vanilla</td>
+          <td>Classic Vanilla Cake</td>
+          <td id="van1">$35.00</td>
+          <td><input type="number" name="qtyVan1" id="qtyVan1" oninput="updateProductTotal('qtyVan1','van1','totalVan1');
+          updateVanSubtotal('totalVan1','totalVan2','totalVan3','subVanilla');
+          calculateTotal('subChoco','subVanilla', 'subStr', 'totalPrice')"></td>
+          <td><input type="number" name="totalVan1" id="totalVan1" readonly></td>
+        </tr>
+        <tr>
+          <td>Buttermilk Vanilla Cake</td>
+          <td id="van2">$25.00</td>
+          <td><input type="number" name="qtyVan2" id="qtyVan2" oninput="updateProductTotal('qtyVan2','van2','totalVan2');
+          updateVanSubtotal('totalVan1','totalVan2','totalVan3','subVanilla');
+          calculateTotal('subChoco','subVanilla', 'subStr', 'totalPrice')"></td>
+          <td><input type="number" name="totalVan2" id="totalVan2" readonly></td>
+        </tr>
+        <tr>
+          <td>Basic Vanilla Cake</td>
+          <td id="van3">$40.00</td>
+          <td><input type="number" name="qtyVan3" id="qtyVan3" oninput="updateProductTotal('qtyVan3','van3','totalVan3');
+          updateVanSubtotal('totalVan1','totalVan2','totalVan3','subVanilla');
+          calculateTotal('subChoco','subVanilla', 'subStr', 'totalPrice')"></td>
+          <td><input type="number" name="totalVan3" id="totalVan3" readonly></td>
+        </tr>
+        <tr>
+          <td colspan="4" class="tdClass">Subtotal $</td>
+          <td><input type="number" name="subVanilla" id="subVanilla" readonly></td>
+        </tr>
+        <tr>
+          <td rowspan="3">Strawberry</td>
+          <td>French Strawberry Cake</td>
+          <td id="str1">$45.00</td>
+          <td><input type="number" name="qtyStr1" id="qtyStr1" oninput="updateProductTotal('qtyStr1','str1','totalStr1');
+          updateStrSubtotal('totalStr1','totalStr2','totalStr3','subStr');
+          calculateTotal('subChoco','subVanilla', 'subStr', 'totalPrice')"></td>
+          <td><input type="text" name="totalStr1" id="totalStr1" readonly></td>
+        </tr>
+        <tr>
+          <td>Strawberry Cheese Cake</td>
+          <td id="str2">$55.00</td>
+          <td><input type="number" name="qtyStr2" id="qtyStr2" oninput="updateProductTotal('qtyStr2','str2','totalStr2');
+          updateStrSubtotal('totalStr1','totalStr2','totalStr3','subStr');
+          calculateTotal('subChoco','subVanilla', 'subStr', 'totalPrice')"></td>
+          <td><input type="number" name="totalStr2" id="totalStr2" readonly></td>
+        </tr><tr>
+          <td>Strawberry triple layer cake</td>
+          <td id="str3">$35.00</td>
+          <td><input type="number" name="qtyStr3" id="qtyStr3" oninput="updateProductTotal('qtyStr3','str3','totalStr3');
+          updateStrSubtotal('totalStr1','totalStr2','totalStr3','subStr');
+          calculateTotal('subChoco','subVanilla', 'subStr', 'totalPrice')"></td>
+          <td><input type="number" name="totalStr3" id="totalStr3" readonly></td>
+        </tr>
+        <tr>
+          <td colspan="4" class="tdClass">Subtotal $</td>
+          <td><input type="number" name="subStr" id="subStr" readonly></td>
+        </tr>
+        <tr>
+          <td colspan="4" class="tdClass">Total $</td>
+          <td><input type="number" name="totalPrice" id="totalPrice" readonly></td>
+        </tr>
+        <tr>
+          <td colspan="4" class="tdClass">Sales Tax (8.25%) $</td>
+          <td><input type="number" name="sales" id="sales" readonly></td>
+        </tr>
+        <tr>
+          <td colspan="4" class="tdClass">Total $</td>
+          <td><input type="number" name="salesTotal" id="salesTotal" readonly></td>
+        </tr>
+        <tr>
+          <td colspan="4" class="tdClass">Shipping and Handling $</td>
+          <td><input type="number" name="ship" id="ship" value="" readonly></td>
+        </tr>
+        <tr>
+          <td colspan="4" class="tdClass">Grand Total $</td>
+          <td><input type="number" name="grandTotal" id="grandTotal" readonly></td>
+        </tr>
+      </table><br><br>
+      <div class="personal">
+      <table>
+        <tr>
+        <td> First Name : </td>
+        <td><input type="text" name="first" id="first" size="40" maxlength="50"></td>
+        </tr>
+        <tr>
+        <td>Last Name : </td>
+        <td><input type="text" name="last" id="last" size="40" maxlength="50"></td>
+        </tr>
+
+        <tr>
+        <td>Street Address : </td>
+        <td><input type="text" name="address" id="address" size="40" maxlength="250"></td>
+        </tr>
+        <tr>
+        <td>City : </td>
+        <td><input type="text" name="city" id="city" size="40" maxlength="50"></td>
+        </tr>
+        <tr>
+        <td>State : </td>
+        <td><input type="text" name="state" id="state" size="40" maxlength="50"></td>
+        </tr>
+        <tr>
+        <td>Zip : </td>
+        <td><input type="text" name="zip" id="zip" size="40" maxlength="9"></td>
+        </tr>
+        <tr>
+        <td>Telephone number((xxx) xxx-xxxx) : </td>
+        <td><input type="text" name="phone" id="phone" size="40"></td>
+        </tr>
+        <tr>
+        <td>EMail : </td>
+        <td><input type="text" name="email" id="email" size="40" maxlength="200"></td>
+        </tr>
+        <tr>
+        <td>Credit card number : </td>
+        <td><input type="text" name="ccnum" id="ccnum" size="40" maxlength="16"></td>
+        </tr>
+        <tr>
+        <td>Select list for credit card type : </td>
+        <td><select name="cctype" style="width:250px;" id="cctype"><option>Visa</option><option>Master Card</option><option>Discover</option><option>American Express</option></select></td>
+        </tr>
+        <tr>
+        <td>Credit card expiration date (format is mm/yyyy) : </td>
+        <td><input type="text" name="ccexpire" id="ccexpire" size="40"></td>
+        </tr>
+        <tr>
+        <td>Comment : </td>
+        <td><textarea rows='3' cols='38' name="comment" maxlength="500"></textarea></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td><input id="hidden_field" name="myemail" type="hidden" value="mahajanpooja1073@student.itu.edu"/></td>
+        </tr>        
+    </table>
+</div>
+      <input type="submit" id="btnSub" value="Submit">
+      <input type="reset" id="btnReset" value="Reset">
+    </form>
+</section>
+<footer>
+<section class="divBottom">
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/index.html" class="anchorBottom">Home</a></span>
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/contact-us.html" class="anchorBottom">Contact Us</a></span>
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/about-us.html" class="anchorBottom">About Us</a></span>
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/faq.html" class="anchorBottom">FAQ</a></span>
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/support.html" class="anchorBottom">Customer Service</a></span>
+<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_info.html" class="anchorBottom">Product Information</a></span>
+	<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/product_catalog.html" class="anchorBottom">Product Catalog</a></span>
+<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/employment.html" class="anchorBottom">Employment</a></span>
+<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/whats_new.html" class="anchorBottom">Whats New</a></span>
+<span class="spanClass"><a href="https://mahajan-pooja.github.io/CakeStore/order.html" class="anchorBottom">Order</a></span>
+</section>	
+</footer>
+</body>
+</html>
